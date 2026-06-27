@@ -35,6 +35,7 @@ use App\Http\Controllers\Api\User\Circle\CircleStoryController as UserCircleStor
 use App\Http\Controllers\Api\User\Circle\CircleWinController as UserCircleWinController;
 use App\Http\Controllers\Api\User\Help\HelpAskController as UserHelpAskController;
 use App\Http\Controllers\Api\User\Help\HelpReplyController as UserHelpReplyController;
+use App\Http\Controllers\Api\User\Auth\ForgotPasswordController as UserForgotPasswordController;
 use App\Http\Controllers\Api\User\Home\HomeController as UserHomeController;
 use App\Http\Controllers\Api\User\Story\StoryCategoryController as UserStoryCategoryController;
 use App\Http\Controllers\Api\User\Story\StoryController as UserStoryController;
@@ -234,6 +235,12 @@ Route::prefix('admin')->group(function (): void {
 Route::prefix('user')->group(function (): void {
     Route::post('register', [UserAuthController::class, 'register']);
     Route::post('login', [UserAuthController::class, 'login']);
+
+    // Password recovery (public, throttled).
+    Route::post('forgot-password', [UserForgotPasswordController::class, 'sendCode'])
+        ->middleware('throttle:6,1');
+    Route::post('reset-password', [UserForgotPasswordController::class, 'reset'])
+        ->middleware('throttle:6,1');
 
     Route::middleware('optional.sanctum')->group(function (): void {
         Route::get('users/{user}', [UserProfileController::class, 'show'])->whereNumber('user');
