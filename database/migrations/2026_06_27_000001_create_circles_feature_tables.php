@@ -142,13 +142,17 @@ return new class extends Migration
         });
 
         // Per-user step completion (the "done" checkmarks).
+        // NOTE: explicit short FK/unique names — the auto-generated names exceed
+        // MySQL's 64-char identifier limit for this long table+column combo.
         Schema::create('circle_challenge_step_completions', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('circle_challenge_step_id')->constrained('circle_challenge_steps')->cascadeOnDelete();
+            $table->unsignedBigInteger('circle_challenge_step_id');
             $table->foreignId('user_id')->constrained('users')->cascadeOnDelete();
             $table->timestamps();
 
-            $table->unique(['circle_challenge_step_id', 'user_id']);
+            $table->foreign('circle_challenge_step_id', 'ccsc_step_fk')
+                ->references('id')->on('circle_challenge_steps')->cascadeOnDelete();
+            $table->unique(['circle_challenge_step_id', 'user_id'], 'ccsc_step_user_unq');
         });
 
         // Member encouragement ("تشجيع بين الأعضاء").
