@@ -45,25 +45,25 @@ return Application::configure(basePath: dirname(__DIR__))
 
                 // 401: missing or invalid Sanctum token
                 $e instanceof AuthenticationException => response()->json([
-                    'message' => 'Unauthenticated.',
+                    'message' => __('errors.unauthenticated'),
                 ], 401),
 
                 // 403: Gate / Policy denial (future policy layer)
                 $e instanceof AuthorizationException => response()->json([
-                    'message' => 'This action is unauthorized.',
+                    'message' => __('errors.unauthorized'),
                 ], 403),
 
                 // 404: model binding failure or explicit abort(404)
                 $e instanceof ModelNotFoundException,
                 $e instanceof NotFoundHttpException => response()->json([
-                    'message' => 'Not found.',
+                    'message' => __('errors.not_found'),
                 ], 404),
 
                 // All other HTTP exceptions: abort(403), abort(429), throttle, etc.
-                // The message from abort() is passed through; falls back to 'Error.'
-                // when abort() was called without a message.
+                // The message from abort() is passed through (already localizable);
+                // falls back to a generic localized message when none was provided.
                 $e instanceof HttpException => response()->json([
-                    'message' => $e->getMessage() ?: 'Error.',
+                    'message' => $e->getMessage() ?: __('errors.error'),
                 ], $e->getStatusCode()),
 
                 // 500: unexpected exceptions.
@@ -71,7 +71,7 @@ return Application::configure(basePath: dirname(__DIR__))
                 default => response()->json([
                     'message' => app()->hasDebugModeEnabled()
                         ? $e->getMessage()
-                        : 'Server Error.',
+                        : __('errors.server_error'),
                 ], 500),
             };
         });
