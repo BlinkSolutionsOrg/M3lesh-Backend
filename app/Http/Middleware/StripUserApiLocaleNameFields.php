@@ -8,7 +8,24 @@ use Symfony\Component\HttpFoundation\Response;
 
 class StripUserApiLocaleNameFields
 {
-    private const STRIP_KEYS = ['name_ar', 'name_en', 'title_ar', 'title_en', 'content_ar', 'content_en'];
+    private const STRIP_KEYS = [
+        'name_ar', 'name_en',
+        'title_ar', 'title_en',
+        'content_ar', 'content_en',
+        'description_ar', 'description_en',
+        'tag_ar', 'tag_en',
+        'question_ar', 'question_en',
+        'text_ar', 'text_en',
+        'label_ar', 'label_en',
+        'reaction_label_ar', 'reaction_label_en',
+        'pill_label_ar', 'pill_label_en',
+        'compose_hint_ar', 'compose_hint_en',
+        'room_banner_ar', 'room_banner_en',
+        'criterion_ar', 'criterion_en',
+        'presence_label_ar', 'presence_label_en',
+        'help_banner_title_ar', 'help_banner_title_en',
+        'help_banner_body_ar', 'help_banner_body_en',
+    ];
 
     /**
      * For GET /api/user/*: remove name_ar, name_en and title_ar, title_en, content_ar, content_en from JSON response (locale-based name/title/content only).

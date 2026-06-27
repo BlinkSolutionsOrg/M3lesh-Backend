@@ -62,6 +62,105 @@ class PermissionSeeder extends Seeder
         ['key' => 'restore_post_comment_presets', 'name_ar' => 'استعادة تعليق جاهز', 'name_en' => 'Restore comment preset'],
         ['key' => 'force_delete_post_comment_presets', 'name_ar' => 'حذف تعليق جاهز نهائياً', 'name_en' => 'Permanently delete comment preset'],
 
+        // ——— Circles ———
+        ['key' => 'view_circles', 'name_ar' => 'عرض الدوائر', 'name_en' => 'View circles'],
+        ['key' => 'create_circles', 'name_ar' => 'إضافة دائرة', 'name_en' => 'Create circle'],
+        ['key' => 'edit_circles', 'name_ar' => 'تعديل الدوائر', 'name_en' => 'Edit circles'],
+        ['key' => 'delete_circles', 'name_ar' => 'حذف الدوائر', 'name_en' => 'Delete circles'],
+        ['key' => 'restore_circles', 'name_ar' => 'استعادة دائرة محذوفة', 'name_en' => 'Restore circles'],
+        ['key' => 'force_delete_circles', 'name_ar' => 'حذف دائرة نهائياً', 'name_en' => 'Permanently delete circles'],
+
+        // ——— Circle challenges ———
+        ['key' => 'view_circle_challenges', 'name_ar' => 'عرض تحديات الدوائر', 'name_en' => 'View circle challenges'],
+        ['key' => 'create_circle_challenges', 'name_ar' => 'إضافة تحدي', 'name_en' => 'Create circle challenge'],
+        ['key' => 'edit_circle_challenges', 'name_ar' => 'تعديل تحديات الدوائر', 'name_en' => 'Edit circle challenges'],
+        ['key' => 'delete_circle_challenges', 'name_ar' => 'حذف تحديات الدوائر', 'name_en' => 'Delete circle challenges'],
+        ['key' => 'restore_circle_challenges', 'name_ar' => 'استعادة تحدي محذوف', 'name_en' => 'Restore circle challenges'],
+        ['key' => 'force_delete_circle_challenges', 'name_ar' => 'حذف تحدي نهائياً', 'name_en' => 'Permanently delete circle challenges'],
+
+        // ——— Help asks (محتاج رأيكم) ———
+        ['key' => 'view_help_asks', 'name_ar' => 'عرض أسئلة محتاج رأيكم', 'name_en' => 'View help asks'],
+        ['key' => 'create_help_asks', 'name_ar' => 'إضافة سؤال', 'name_en' => 'Create help ask'],
+        ['key' => 'edit_help_asks', 'name_ar' => 'تعديل أسئلة محتاج رأيكم', 'name_en' => 'Edit help asks'],
+        ['key' => 'delete_help_asks', 'name_ar' => 'حذف أسئلة محتاج رأيكم', 'name_en' => 'Delete help asks'],
+        ['key' => 'restore_help_asks', 'name_ar' => 'استعادة سؤال محذوف', 'name_en' => 'Restore help asks'],
+        ['key' => 'force_delete_help_asks', 'name_ar' => 'حذف سؤال نهائياً', 'name_en' => 'Permanently delete help asks'],
+
+        // ——— Stories ———
+        ['key' => 'view_stories', 'name_ar' => 'عرض الحكايات', 'name_en' => 'View stories'],
+        ['key' => 'create_stories', 'name_ar' => 'إضافة تصنيف حكايات', 'name_en' => 'Create stories'],
+        ['key' => 'edit_stories', 'name_ar' => 'تعديل الحكايات', 'name_en' => 'Edit stories'],
+        ['key' => 'delete_stories', 'name_ar' => 'حذف الحكايات', 'name_en' => 'Delete stories'],
+        ['key' => 'restore_stories', 'name_ar' => 'استعادة حكاية محذوفة', 'name_en' => 'Restore stories'],
+        ['key' => 'force_delete_stories', 'name_ar' => 'حذف حكاية نهائياً', 'name_en' => 'Permanently delete stories'],
+
+        // ——— Wheel challenges (عجلة معلش) ———
+        ['key' => 'view_wheel_challenges', 'name_ar' => 'عرض تحديات العجلة', 'name_en' => 'View wheel challenges'],
+        ['key' => 'create_wheel_challenges', 'name_ar' => 'إضافة تحدي عجلة', 'name_en' => 'Create wheel challenge'],
+        ['key' => 'edit_wheel_challenges', 'name_ar' => 'تعديل تحديات العجلة', 'name_en' => 'Edit wheel challenges'],
+        ['key' => 'delete_wheel_challenges', 'name_ar' => 'حذف تحديات العجلة', 'name_en' => 'Delete wheel challenges'],
+        ['key' => 'restore_wheel_challenges', 'name_ar' => 'استعادة تحدي عجلة محذوف', 'name_en' => 'Restore wheel challenges'],
+        ['key' => 'force_delete_wheel_challenges', 'name_ar' => 'حذف تحدي عجلة نهائياً', 'name_en' => 'Permanently delete wheel challenges'],
+
+        // ——— Moods ———
+        ['key' => 'view_moods', 'name_ar' => 'عرض المزاجات', 'name_en' => 'View moods'],
+        ['key' => 'create_moods', 'name_ar' => 'إضافة مزاج', 'name_en' => 'Create mood'],
+        ['key' => 'edit_moods', 'name_ar' => 'تعديل المزاجات', 'name_en' => 'Edit moods'],
+        ['key' => 'delete_moods', 'name_ar' => 'حذف المزاجات', 'name_en' => 'Delete moods'],
+        ['key' => 'restore_moods', 'name_ar' => 'استعادة مزاج محذوف', 'name_en' => 'Restore moods'],
+        ['key' => 'force_delete_moods', 'name_ar' => 'حذف مزاج نهائياً', 'name_en' => 'Permanently delete moods'],
+
+        // ——— Daily card tips (سحبة النهاردة) ———
+        ['key' => 'view_daily_card_tips', 'name_ar' => 'عرض كروت سحبة النهاردة', 'name_en' => 'View daily card tips'],
+        ['key' => 'create_daily_card_tips', 'name_ar' => 'إضافة كارت سحبة', 'name_en' => 'Create daily card tip'],
+        ['key' => 'edit_daily_card_tips', 'name_ar' => 'تعديل كروت سحبة النهاردة', 'name_en' => 'Edit daily card tips'],
+        ['key' => 'delete_daily_card_tips', 'name_ar' => 'حذف كروت سحبة النهاردة', 'name_en' => 'Delete daily card tips'],
+        ['key' => 'restore_daily_card_tips', 'name_ar' => 'استعادة كارت محذوف', 'name_en' => 'Restore daily card tips'],
+        ['key' => 'force_delete_daily_card_tips', 'name_ar' => 'حذف كارت نهائياً', 'name_en' => 'Permanently delete daily card tips'],
+
+        // ——— Achievements (الإنجازات) ———
+        ['key' => 'view_achievements', 'name_ar' => 'عرض الإنجازات', 'name_en' => 'View achievements'],
+        ['key' => 'create_achievements', 'name_ar' => 'إضافة إنجاز', 'name_en' => 'Create achievement'],
+        ['key' => 'edit_achievements', 'name_ar' => 'تعديل الإنجازات', 'name_en' => 'Edit achievements'],
+        ['key' => 'delete_achievements', 'name_ar' => 'حذف الإنجازات', 'name_en' => 'Delete achievements'],
+        ['key' => 'restore_achievements', 'name_ar' => 'استعادة إنجاز محذوف', 'name_en' => 'Restore achievements'],
+        ['key' => 'force_delete_achievements', 'name_ar' => 'حذف إنجاز نهائياً', 'name_en' => 'Permanently delete achievements'],
+
+        // ——— Room decorations (تزيينات البيت) ———
+        ['key' => 'view_room_decorations', 'name_ar' => 'عرض تزيينات البيت', 'name_en' => 'View room decorations'],
+        ['key' => 'create_room_decorations', 'name_ar' => 'إضافة تزيين', 'name_en' => 'Create room decoration'],
+        ['key' => 'edit_room_decorations', 'name_ar' => 'تعديل تزيينات البيت', 'name_en' => 'Edit room decorations'],
+        ['key' => 'delete_room_decorations', 'name_ar' => 'حذف تزيينات البيت', 'name_en' => 'Delete room decorations'],
+        ['key' => 'restore_room_decorations', 'name_ar' => 'استعادة تزيين محذوف', 'name_en' => 'Restore room decorations'],
+        ['key' => 'force_delete_room_decorations', 'name_ar' => 'حذف تزيين نهائياً', 'name_en' => 'Permanently delete room decorations'],
+
+        // ——— Companion suggestions (رفيق معلش) ———
+        ['key' => 'view_companion_suggestions', 'name_ar' => 'عرض اقتراحات الرفيق', 'name_en' => 'View companion suggestions'],
+        ['key' => 'create_companion_suggestions', 'name_ar' => 'إضافة اقتراح رفيق', 'name_en' => 'Create companion suggestion'],
+        ['key' => 'edit_companion_suggestions', 'name_ar' => 'تعديل اقتراحات الرفيق', 'name_en' => 'Edit companion suggestions'],
+        ['key' => 'delete_companion_suggestions', 'name_ar' => 'حذف اقتراحات الرفيق', 'name_en' => 'Delete companion suggestions'],
+        ['key' => 'restore_companion_suggestions', 'name_ar' => 'استعادة اقتراح محذوف', 'name_en' => 'Restore companion suggestions'],
+        ['key' => 'force_delete_companion_suggestions', 'name_ar' => 'حذف اقتراح نهائياً', 'name_en' => 'Permanently delete companion suggestions'],
+
+        // ——— Companion replies (رفيق معلش) ———
+        ['key' => 'view_companion_replies', 'name_ar' => 'عرض ردود الرفيق', 'name_en' => 'View companion replies'],
+        ['key' => 'create_companion_replies', 'name_ar' => 'إضافة رد رفيق', 'name_en' => 'Create companion reply'],
+        ['key' => 'edit_companion_replies', 'name_ar' => 'تعديل ردود الرفيق', 'name_en' => 'Edit companion replies'],
+        ['key' => 'delete_companion_replies', 'name_ar' => 'حذف ردود الرفيق', 'name_en' => 'Delete companion replies'],
+        ['key' => 'restore_companion_replies', 'name_ar' => 'استعادة رد محذوف', 'name_en' => 'Restore companion replies'],
+        ['key' => 'force_delete_companion_replies', 'name_ar' => 'حذف رد نهائياً', 'name_en' => 'Permanently delete companion replies'],
+
+        // ——— Companion settings (رفيق معلش) ———
+        ['key' => 'manage_companion_settings', 'name_ar' => 'إدارة إعدادات الرفيق', 'name_en' => 'Manage companion settings'],
+
+        // ——— Community seasons (شجرة الدعم) ———
+        ['key' => 'view_community_seasons', 'name_ar' => 'عرض مواسم المجتمع', 'name_en' => 'View community seasons'],
+        ['key' => 'create_community_seasons', 'name_ar' => 'إضافة موسم مجتمع', 'name_en' => 'Create community season'],
+        ['key' => 'edit_community_seasons', 'name_ar' => 'تعديل مواسم المجتمع', 'name_en' => 'Edit community seasons'],
+        ['key' => 'delete_community_seasons', 'name_ar' => 'حذف مواسم المجتمع', 'name_en' => 'Delete community seasons'],
+        ['key' => 'restore_community_seasons', 'name_ar' => 'استعادة موسم محذوف', 'name_en' => 'Restore community seasons'],
+        ['key' => 'force_delete_community_seasons', 'name_ar' => 'حذف موسم نهائياً', 'name_en' => 'Permanently delete community seasons'],
+
         // ——— Profile avatars ———
         ['key' => 'view_avatars', 'name_ar' => 'عرض أفاتارات الملف الشخصي', 'name_en' => 'View profile avatars'],
         ['key' => 'create_avatars', 'name_ar' => 'إضافة أفاتار', 'name_en' => 'Add profile avatar'],

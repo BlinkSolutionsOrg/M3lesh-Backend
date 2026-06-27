@@ -19,6 +19,14 @@ class DatabaseSeeder extends Seeder
             RoleSeeder::class,
             AdminSeeder::class,
             UserSeeder::class,
+            CircleSeeder::class,
+            HelpSeeder::class,
+            StorySeeder::class,
+            WheelSeeder::class,
+            MoodSeeder::class,
+            SpaceSeeder::class,
+            CompanionSeeder::class,
+            CommunitySeeder::class,
         ]);
     }
 }

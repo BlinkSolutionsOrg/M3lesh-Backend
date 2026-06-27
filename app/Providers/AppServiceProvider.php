@@ -2,9 +2,20 @@
 
 namespace App\Providers;
 
+use App\Models\Circle\Circle;
+use App\Models\Community\CommunitySeason;
+use App\Models\Companion\CompanionReply;
+use App\Models\Companion\CompanionSuggestion;
+use App\Models\Help\HelpAsk;
+use App\Models\Mood\Mood;
 use App\Models\Post\Post;
 use App\Models\Post\PostCommentPreset;
+use App\Models\Space\Achievement;
+use App\Models\Space\DailyCardTip;
+use App\Models\Space\RoomDecoration;
+use App\Models\Story\Story;
 use App\Models\User\Admin;
+use App\Models\Wheel\WheelChallenge;
 use BezhanSalleh\LanguageSwitch\LanguageSwitch;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Route;
@@ -28,6 +39,17 @@ class AppServiceProvider extends ServiceProvider
     {
         Route::bind('admin_post', fn (string $value) => Post::withTrashed()->whereKey($value)->firstOrFail());
         Route::bind('comment_preset', fn (string $value) => PostCommentPreset::withTrashed()->whereKey($value)->firstOrFail());
+        Route::bind('admin_circle', fn (string $value) => Circle::withTrashed()->whereKey($value)->firstOrFail());
+        Route::bind('admin_help_ask', fn (string $value) => HelpAsk::withTrashed()->whereKey($value)->firstOrFail());
+        Route::bind('admin_story', fn (string $value) => Story::withTrashed()->whereKey($value)->firstOrFail());
+        Route::bind('admin_wheel_challenge', fn (string $value) => WheelChallenge::withTrashed()->whereKey($value)->firstOrFail());
+        Route::bind('admin_mood', fn (string $value) => Mood::withTrashed()->whereKey($value)->firstOrFail());
+        Route::bind('admin_daily_card_tip', fn (string $value) => DailyCardTip::withTrashed()->whereKey($value)->firstOrFail());
+        Route::bind('admin_achievement', fn (string $value) => Achievement::withTrashed()->whereKey($value)->firstOrFail());
+        Route::bind('admin_room_decoration', fn (string $value) => RoomDecoration::withTrashed()->whereKey($value)->firstOrFail());
+        Route::bind('admin_companion_suggestion', fn (string $value) => CompanionSuggestion::withTrashed()->whereKey($value)->firstOrFail());
+        Route::bind('admin_companion_reply', fn (string $value) => CompanionReply::withTrashed()->whereKey($value)->firstOrFail());
+        Route::bind('admin_community_season', fn (string $value) => CommunitySeason::withTrashed()->whereKey($value)->firstOrFail());
 
         // Super Admin (admin_type = super_admin) bypasses all permission checks everywhere:
         // Filament (canViewAny, canCreate, canEdit, …) and API (authorize, $user->can(…)).

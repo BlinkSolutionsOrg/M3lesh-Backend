@@ -4,9 +4,23 @@ namespace App\Providers\Filament;
 
 use App\Filament\Livewire\AdminDatabaseNotifications;
 use App\Filament\Pages\Auth\Login;
+use App\Filament\Pages\CompanionSettingsPage;
+use App\Filament\Resources\Achievement\AchievementResource;
 use App\Filament\Resources\Admin\AdminResource;
 use App\Filament\Resources\Avatar\AvatarResource;
+use App\Filament\Resources\Community\CommunitySeasonResource;
+use App\Filament\Resources\CompanionReply\CompanionReplyResource;
+use App\Filament\Resources\CompanionSuggestion\CompanionSuggestionResource;
+use App\Filament\Resources\DailyCardTip\DailyCardTipResource;
+use App\Filament\Resources\Mood\MoodResource;
+use App\Filament\Resources\RoomDecoration\RoomDecorationResource;
+use App\Filament\Resources\Circle\CircleResource;
+use App\Filament\Resources\CircleChallenge\CircleChallengeResource;
 use App\Filament\Resources\ContentPage\ContentPageResource;
+use App\Filament\Resources\HelpAsk\HelpAskResource;
+use App\Filament\Resources\Story\StoryResource;
+use App\Filament\Resources\StoryCategory\StoryCategoryResource;
+use App\Filament\Resources\WheelChallenge\WheelChallengeResource;
 use App\Filament\Resources\Notifications\NotificationBroadcastResource;
 use App\Filament\Resources\Notifications\NotificationResource;
 use App\Filament\Resources\Post\PostResource;
@@ -86,6 +100,44 @@ class AdminPanelProvider extends PanelProvider
                             ->items([
                                 ...(PostResource::shouldRegisterNavigation() ? PostResource::getNavigationItems() : []),
                                 ...(PostCommentPresetResource::shouldRegisterNavigation() ? PostCommentPresetResource::getNavigationItems() : []),
+                            ]),
+                        NavigationGroup::make(__('filament.navigation.circles_management'))
+                            ->items([
+                                ...(CircleResource::shouldRegisterNavigation() ? CircleResource::getNavigationItems() : []),
+                                ...(CircleChallengeResource::shouldRegisterNavigation() ? CircleChallengeResource::getNavigationItems() : []),
+                            ]),
+                        NavigationGroup::make(__('filament.navigation.help_management'))
+                            ->items([
+                                ...(HelpAskResource::shouldRegisterNavigation() ? HelpAskResource::getNavigationItems() : []),
+                            ]),
+                        NavigationGroup::make(__('filament.navigation.stories_management'))
+                            ->items([
+                                ...(StoryResource::shouldRegisterNavigation() ? StoryResource::getNavigationItems() : []),
+                                ...(StoryCategoryResource::shouldRegisterNavigation() ? StoryCategoryResource::getNavigationItems() : []),
+                            ]),
+                        NavigationGroup::make(__('filament.navigation.wheel_management'))
+                            ->items([
+                                ...(WheelChallengeResource::shouldRegisterNavigation() ? WheelChallengeResource::getNavigationItems() : []),
+                            ]),
+                        NavigationGroup::make(__('filament.navigation.mood_management'))
+                            ->items([
+                                ...(MoodResource::shouldRegisterNavigation() ? MoodResource::getNavigationItems() : []),
+                            ]),
+                        NavigationGroup::make(__('filament.navigation.space_management'))
+                            ->items([
+                                ...(DailyCardTipResource::shouldRegisterNavigation() ? DailyCardTipResource::getNavigationItems() : []),
+                                ...(AchievementResource::shouldRegisterNavigation() ? AchievementResource::getNavigationItems() : []),
+                                ...(RoomDecorationResource::shouldRegisterNavigation() ? RoomDecorationResource::getNavigationItems() : []),
+                            ]),
+                        NavigationGroup::make(__('filament.navigation.companion_management'))
+                            ->items([
+                                ...(CompanionSuggestionResource::shouldRegisterNavigation() ? CompanionSuggestionResource::getNavigationItems() : []),
+                                ...(CompanionReplyResource::shouldRegisterNavigation() ? CompanionReplyResource::getNavigationItems() : []),
+                                ...(CompanionSettingsPage::shouldRegisterNavigation() ? CompanionSettingsPage::getNavigationItems() : []),
+                            ]),
+                        NavigationGroup::make(__('filament.navigation.community_management'))
+                            ->items([
+                                ...(CommunitySeasonResource::shouldRegisterNavigation() ? CommunitySeasonResource::getNavigationItems() : []),
                             ]),
                         NavigationGroup::make(__('filament.navigation.system_services'))
                             ->items([
