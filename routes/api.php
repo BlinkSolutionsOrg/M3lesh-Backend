@@ -35,6 +35,7 @@ use App\Http\Controllers\Api\User\Circle\CircleStoryController as UserCircleStor
 use App\Http\Controllers\Api\User\Circle\CircleWinController as UserCircleWinController;
 use App\Http\Controllers\Api\User\Help\HelpAskController as UserHelpAskController;
 use App\Http\Controllers\Api\User\Help\HelpReplyController as UserHelpReplyController;
+use App\Http\Controllers\Api\User\Home\HomeController as UserHomeController;
 use App\Http\Controllers\Api\User\Story\StoryCategoryController as UserStoryCategoryController;
 use App\Http\Controllers\Api\User\Story\StoryController as UserStoryController;
 use App\Http\Controllers\Api\User\Mood\MoodController as UserMoodController;
@@ -278,6 +279,9 @@ Route::prefix('user')->group(function (): void {
 
         // Community (شجرة الدعم) — overview (optional auth)
         Route::get('community/overview', [UserCommunityController::class, 'overview']);
+
+        // Home dashboard aggregate (optional auth)
+        Route::get('home', [UserHomeController::class, 'index']);
     });
 
     Route::middleware('auth:sanctum')->group(function (): void {
