@@ -38,7 +38,12 @@ class AvatarForm
                     ->directory('avatars')
                     ->visibility('public')
                     ->imagePreviewHeight('160')
-                    ->maxSize(5120)
+                    // ~50MB per file — effectively no limit for avatars (the
+                    // raster-wrapped SVGs design tools export can be large). The
+                    // PHP upload_max_filesize/post_max_size and the Livewire
+                    // temporary-upload rule are raised to match (see docker
+                    // php conf.d + config/livewire.php).
+                    ->maxSize(51200)
                     ->columnSpanFull(),
             ]);
     }
