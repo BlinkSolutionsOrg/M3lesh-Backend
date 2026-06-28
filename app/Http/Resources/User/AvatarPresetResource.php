@@ -20,6 +20,8 @@ class AvatarPresetResource extends JsonResource
         return [
             'id' => $this->id,
             'image' => storage_public_url($this->image),
+            'thumb' => app(\App\Services\AvatarThumbnailService::class)
+                ->thumbUrlFor($this->image),
             'created_at' => $this->created_at?->toIso8601String(),
         ];
     }
