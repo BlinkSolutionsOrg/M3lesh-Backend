@@ -74,18 +74,15 @@ class MaaleshStarterContentSeeder extends Seeder
                     'description_en' => 'A small step each day — we grow together.',
                     'is_active' => true,
                 ]);
-                $this->setAuditIfNew($challenge);
                 $challenge->save();
 
                 foreach ($steps as $i => $step) {
-                    $row = new CircleChallengeStep([
+                    CircleChallengeStep::query()->create([
                         'circle_challenge_id' => $challenge->id,
                         'text_ar' => $step['ar'],
                         'text_en' => $step['en'],
                         'sort_order' => $i + 1,
                     ]);
-                    $this->setAuditIfNew($row);
-                    $row->save();
                 }
             },
         );
