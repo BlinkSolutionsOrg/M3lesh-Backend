@@ -37,6 +37,7 @@ use App\Http\Controllers\Api\User\Help\HelpAskController as UserHelpAskControlle
 use App\Http\Controllers\Api\User\Help\HelpReplyController as UserHelpReplyController;
 use App\Http\Controllers\Api\User\Auth\ForgotPasswordController as UserForgotPasswordController;
 use App\Http\Controllers\Api\User\Home\HomeController as UserHomeController;
+use App\Http\Controllers\Api\User\Search\SearchController as UserSearchController;
 use App\Http\Controllers\Api\User\Story\StoryCategoryController as UserStoryCategoryController;
 use App\Http\Controllers\Api\User\Story\StoryController as UserStoryController;
 use App\Http\Controllers\Api\User\Mood\MoodController as UserMoodController;
@@ -289,6 +290,9 @@ Route::prefix('user')->group(function (): void {
 
         // Home dashboard aggregate (optional auth)
         Route::get('home', [UserHomeController::class, 'index']);
+
+        // Unified search (optional auth)
+        Route::get('search', [UserSearchController::class, 'index']);
     });
 
     Route::middleware('auth:sanctum')->group(function (): void {
