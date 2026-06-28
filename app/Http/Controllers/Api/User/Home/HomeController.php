@@ -4,7 +4,9 @@ namespace App\Http\Controllers\Api\User\Home;
 
 use App\Http\Controllers\Controller;
 use App\Http\Resources\Circle\CircleStoryResource;
+use App\Http\Resources\Help\HelpAskResource;
 use App\Models\Circle\CircleStory;
+use App\Models\Help\HelpAsk;
 use App\Models\Community\CommunitySeason;
 use App\Models\Community\SupportLeaf;
 use App\Models\Mood\MoodCheckin;
@@ -34,8 +36,22 @@ class HomeController extends Controller
                 'community' => $this->community(),
                 'wheel' => $this->wheel(),
                 'stories' => $this->stories($request),
+                'latest_ask' => $this->latestAsk($request),
             ],
         ]);
+    }
+
+    /**
+     * @return array<string, mixed>|null
+     */
+    private function latestAsk(Request $request): ?array
+    {
+        $ask = HelpAsk::query()->with('user')->latest('id')->first();
+        if ($ask === null) {
+            return null;
+        }
+
+        return HelpAskResource::make($ask)->resolve($request);
     }
 
     private function streak(?int $userId): int
